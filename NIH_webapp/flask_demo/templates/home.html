@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+    <title>SisTwin</title>
+    <!-- Using custom image for tab icon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/sis-twin.ico') }}">
+    <!-- Using custom styling-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}" />
+    
+    <!-- Imports for Google's Material Design -->
+    
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google imports end -->
+</head>
+<body>
+    <nav class="nav-extended">
+        <div class="nav-wrapper brown lighten-3">
+          <a href="#" class="brand-logo">
+            <img filter="url(#tint-red)" alt="logo" src="{{ url_for('static', filename='img/tiger-icon.png') }}" width="75" height="75"/>
+          </a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/">Sass</a></li>
+            <li><a href="/">Components</a></li>
+            <li><a href="/">JavaScript</a></li>
+            <!-- Dropdown Trigger -->
+      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+          </ul>
+        </div>
+        <div class="nav-content brown dark-3">
+          <ul class="tabs tabs-transparent">
+            <li class="tab"><a href="/">Test 1</a></li>
+            <li class="tab"><a class="active" href="/">Test 2</a></li>
+            <li class="tab"><a href="/">Test 3</a></li>
+            <li class="tab"><a href="/">Test 4</a></li>
+          </ul>
+        </div>
+      </nav>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="/">Sass</a></li>
+        <li><a href="/">Components</a></li>
+        <li><a href="/">Javascript</a></li>
+        <li><a href="/">Mobile</a></li>
+      </ul>
+    <h1 class="brown-text text-lighten-2">Hey Twiinnn</h1>
+
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, {});
+        });
+    </script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>

@@ -1,0 +1,5 @@
+{  
+    "python_exe" : "python", 
+    "debug":"true",  
+    "mode":"dev"  
+}  
